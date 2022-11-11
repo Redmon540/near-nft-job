@@ -12,7 +12,7 @@ import { Buffer } from "buffer";
 if (typeof window !== "undefined") window.Buffer = Buffer;
 if (typeof global !== "undefined") global.Buffer = Buffer;
 
-const nearConfig = getConfig(process.env.NODE_ENV || "development");
+const nearConfig = getConfig("development");
 
 export async function initContract() {
   const near: any = await connect(
