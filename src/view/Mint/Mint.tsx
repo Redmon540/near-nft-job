@@ -51,7 +51,7 @@ export default function Mint() {
         return blob;
     }
 
-    const handleChange = (file) => {
+    const handleChange = (file: any) => {
         setFile(file);
         nft = file;
         console.log("nft", nft);
@@ -62,7 +62,7 @@ export default function Mint() {
         reader.readAsDataURL(file);
     };
 
-    const getRole = (e) => {
+    const getRole = (e: any) => {
         role = e.target.value;
         if (e.key === "Enter"){
             mrole = role;

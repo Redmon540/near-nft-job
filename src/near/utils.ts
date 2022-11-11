@@ -15,7 +15,7 @@ if (typeof global !== "undefined") global.Buffer = Buffer;
 const nearConfig = getConfig(process.env.NODE_ENV || "development");
 
 export async function initContract() {
-  const near = await connect(
+  const near: any = await connect(
     // @ts-ignore
     Object.assign(
       { deps: { keyStore: new keyStores.BrowserLocalStorageKeyStore() } },
@@ -23,7 +23,7 @@ export async function initContract() {
     )
   );
   window.near = near;
-  window.walletConnection = new WalletConnection(near);
+  window.walletConnection = new WalletConnection(near, null);
 
   window.accountId = window.walletConnection.getAccountId();
 
